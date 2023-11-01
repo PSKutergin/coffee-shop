@@ -37,12 +37,37 @@
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1">
                         <div class="shop__wrapper">
-                            <product-cards-component />
-                            <product-cards-component />
-                            <product-cards-component />
-                            <product-cards-component />
-                            <product-cards-component />
-                            <product-cards-component />
+                            <product-cards-component 
+                                class-item="shop__item"
+                                :name="goods[0].name"
+                                :price="goods[0].price"
+                                :image="goods[0].image"
+                            />
+                            <product-cards-component 
+                                class-item="shop__item"
+                                :name="goods[1].name"
+                                :price="goods[1].price"
+                                :image="goods[1].image"/>
+                            <product-cards-component 
+                                class-item="shop__item"
+                                :name="goods[2].name"
+                                :price="goods[2].price"
+                                :image="goods[2].image"/>
+                            <product-cards-component 
+                                class-item="shop__item"
+                                :name="goods[3].name"
+                                :price="goods[3].price"
+                                :image="goods[3].image"/>
+                            <product-cards-component 
+                                class-item="shop__item"
+                                :name="goods[4].name"
+                                :price="goods[4].price"
+                                :image="goods[4].image"/>
+                            <product-cards-component 
+                                class-item="shop__item"
+                                :name="goods[5].name"
+                                :price="goods[5].price"
+                                :image="goods[5].image"/>
                         </div>
                     </div>
                 </div>
@@ -62,46 +87,46 @@ export default {
 
     data() {
         return {
-            cards: [
+            goods: [
                 {
                     id: 0,
-                    img: 'coffee-3.jpg',
-                    text: 'Solimo Coffee Beans 2kg',
+                    image: 'coffee-3.jpg',
+                    name: 'Solimo Coffee Beans 2kg',
                     country: 'Brazil',
                     price: 10.73,
                 },
                 {
                     id: 1,
-                    img: 'coffee-3.jpg',
-                    text: 'Presto Coffee Beans 1kg',
+                    image: 'coffee-3.jpg',
+                    name: 'Presto Coffee Beans 1kg',
                     country: 'Brazil',
                     price: 15.99,
                 },
                 {
                     id: 2,
-                    img: 'coffee-3.jpg',
-                    text: 'AROMISTICO Coffee 1kg',
+                    image: 'coffee-3.jpg',
+                    name: 'AROMISTICO Coffee 1kg',
                     country: 'Brazil',
                     price: 6.99,
                 },
                 {
                     id: 3,
-                    img: 'coffee-3.jpg',
-                    text: 'Solimo Coffee Beans 2kg',
+                    image: 'coffee-3.jpg',
+                    name: 'Solimo Coffee Beans 2kg',
                     country: 'Brazil',
                     price: 10.73,
                 },
                 {
                     id: 4,
-                    img: 'coffee-3.jpg',
-                    text: 'Solimo Coffee Beans 2kg',
+                    image: 'coffee-3.jpg',
+                    name: 'Solimo Coffee Beans 2kg',
                     country: 'Brazil',
                     price: 10.73,
                 },
                 {
                     id: 5,
-                    img: 'coffee-3.jpg',
-                    text: 'Solimo Coffee Beans 2kg',
+                    image: 'coffee-3.jpg',
+                    name: 'Solimo Coffee Beans 2kg',
                     country: 'Brazil',
                     price: 10.73,
                 },

@@ -49,9 +49,24 @@
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1">
                         <div class="best__wrapper">
-                            <product-cards-component />
-                            <product-cards-component />
-                            <product-cards-component />
+                            <product-cards-component
+                                classItem="best__item"
+                                :name="bestsellers[0].name"
+                                :price="bestsellers[0].price"
+                                :image="bestsellers[0].image"
+                            />
+                            <product-cards-component
+                                classItem="best__item"
+                                :name="bestsellers[1].name"
+                                :price="bestsellers[1].price"
+                                :image="bestsellers[1].image"
+                            />
+                            <product-cards-component
+                                classItem="best__item"
+                                :name="bestsellers[2].name"
+                                :price="bestsellers[2].price"
+                                :image="bestsellers[2].image"
+                            />
                         </div>
                     </div>
                 </div>
@@ -70,21 +85,24 @@ export default {
 
     data() {
         return {
-            cards: [
+            bestsellers: [
                 {
                     id: 0,
-                    img: 'coffee-1.jpg',
-                    text: 'Solimo Coffee Beans 2kg',
+                    image: 'coffee-1.jpg',
+                    name: 'Solimo Coffee Beans 2kg',
+                    price: 10.73,
                 },
                 {
                     id: 1,
-                    img: 'coffee-2.jpg',
-                    text: 'Presto Coffee Beans 1kg',
+                    image: 'coffee-2.jpg',
+                    name: 'Presto Coffee Beans 1kg',
+                    price: 15.99,
                 },
                 {
                     id: 2,
-                    img: 'coffee-3.jpg',
-                    text: 'AROMISTICO Coffee 1kg',
+                    image: 'coffee-3.jpg',
+                    name: 'AROMISTICO Coffee 1kg',
+                    price: 6.99,
                 },
             ]
         }

@@ -1,11 +1,32 @@
 <template>
 
-    <div class="best__item">
-        <img src="@/assets/img/coffee-3.jpg" alt="coffee">
-        <div class="best__item-title">
-            AROMISTICO Coffee 1kg
-        </div>
-        <div class="best__item-price">6.99$</div>
+    <div :class="classItem">
+        <img :src="require(`@/assets/img/${image}`)" :alt="image">
+        <div class="best__item-title">{{name}}</div>
+        <div class="best__item-price">{{price}}$</div>
     </div>
 
 </template>
+
+<script>
+export default {
+    props: {
+        name: {
+            type: String,
+            required: true,
+        },
+        price: {
+            type: String,
+            required: true,
+        },
+        image: {
+            type: String,
+            required: true,
+        },
+        classItem: {
+            typeof: String,
+            required: false,
+        },
+    },
+};
+</script>
