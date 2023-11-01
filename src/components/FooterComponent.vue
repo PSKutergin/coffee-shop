@@ -6,17 +6,17 @@
                   <ul class="footer d-flex flex-wrap">
                       <li class=" footer__item">
                         <router-link to="/">
-                            <img src="@/assets/logo/Logo_black.svg" alt="logo">
+                            <img :src="require(`@/assets/logo/${links[0].icon}`)" :alt="links[0].icon">
                         </router-link>
                       </li>
                       <li class="footer__item">
-                            <router-link to="/our-coffee">Our coffee</router-link>
+                            <router-link :to="links[1].link">{{ links[1].text }}</router-link>
                       </li>
                       <li class="footer__item">
-                            <router-link to="/goods-page">For your pleasure</router-link>
+                            <router-link :to="links[2].link">{{ links[2].text }}</router-link>
                       </li>
                       <li class="footer__item">
-                            <router-link to="/contacts">Contact us</router-link>
+                            <router-link :to="links[3].link">{{ links[3].text }}</router-link>
                       </li>
                   </ul>
               </div>
@@ -25,3 +25,34 @@
       </div>
     </footer>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            links: [
+                {
+                    id: 0,
+                    link: '/',
+                    icon: 'Logo_black.svg'
+                },
+                {
+                    id: 1,
+                    text: 'Our coffee',
+                    link: '/our-coffee'
+                },
+                {
+                    id: 2,
+                    text: 'For your pleasure',
+                    link: '/goods-page'
+                },
+                {
+                    id: 3,
+                    text: 'Contact us',
+                    link: '/contacts'
+                },
+            ]
+        }
+    }
+}
+</script>
