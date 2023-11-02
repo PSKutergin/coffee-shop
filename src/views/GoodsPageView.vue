@@ -38,36 +38,13 @@
                     <div class="col-lg-10 offset-lg-1">
                         <div class="shop__wrapper">
                             <product-cards-component 
+                                v-for="card in goods"
+                                :key="card.id"
+                                :name="card.name"
+                                :price="card.price"
+                                :image="card.image"
                                 class-item="shop__item"
-                                :name="goods[0].name"
-                                :price="goods[0].price"
-                                :image="goods[0].image"
                             />
-                            <product-cards-component 
-                                class-item="shop__item"
-                                :name="goods[1].name"
-                                :price="goods[1].price"
-                                :image="goods[1].image"/>
-                            <product-cards-component 
-                                class-item="shop__item"
-                                :name="goods[2].name"
-                                :price="goods[2].price"
-                                :image="goods[2].image"/>
-                            <product-cards-component 
-                                class-item="shop__item"
-                                :name="goods[3].name"
-                                :price="goods[3].price"
-                                :image="goods[3].image"/>
-                            <product-cards-component 
-                                class-item="shop__item"
-                                :name="goods[4].name"
-                                :price="goods[4].price"
-                                :image="goods[4].image"/>
-                            <product-cards-component 
-                                class-item="shop__item"
-                                :name="goods[5].name"
-                                :price="goods[5].price"
-                                :image="goods[5].image"/>
                         </div>
                     </div>
                 </div>

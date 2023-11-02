@@ -50,22 +50,12 @@
                     <div class="col-lg-10 offset-lg-1">
                         <div class="best__wrapper">
                             <product-cards-component
+                                v-for="card in bestsellers"
+                                :key="card.id"
+                                :name="card.name"
+                                :price="card.price"
+                                :image="card.image"
                                 classItem="best__item"
-                                :name="bestsellers[0].name"
-                                :price="bestsellers[0].price"
-                                :image="bestsellers[0].image"
-                            />
-                            <product-cards-component
-                                classItem="best__item"
-                                :name="bestsellers[1].name"
-                                :price="bestsellers[1].price"
-                                :image="bestsellers[1].image"
-                            />
-                            <product-cards-component
-                                classItem="best__item"
-                                :name="bestsellers[2].name"
-                                :price="bestsellers[2].price"
-                                :image="bestsellers[2].image"
                             />
                         </div>
                     </div>
