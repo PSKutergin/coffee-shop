@@ -18,7 +18,7 @@
                         <div class="title mt-5">Tell us about your tastes</div>
                         <img class="beanslogo mt-5" src="@/assets/logo/Beans_logo_dark.svg" alt="Beans logo">
     
-                        <form action="#" class="mt-5">
+                        <form @submit.prevent="submit" action="#" class="mt-5">
                             <div class="form-group row">
                                 <div class="col col-12 col-sm-3 d-flex align-items-center">
                                     <label for="name-input" class="mb-0">
@@ -27,7 +27,7 @@
                                     </label>
                                 </div>
                                 <div class="col col-12 col-sm-9">
-                                    <input type="text" class="form-control" id="name-input">
+                                    <input v-model="form.name" type="text" class="form-control" id="name-input">
                                 </div>
                             </div>
     
@@ -39,7 +39,7 @@
                                     </label>
                                 </div>
                                 <div class="col col-12 col-sm-9">
-                                    <input type="email" class="form-control" id="email-input">
+                                    <input v-model="form.email" type="email" class="form-control" id="email-input">
                                 </div>
                             </div>
     
@@ -50,7 +50,7 @@
                                     </label>
                                 </div>
                                 <div class="col col-12 col-sm-9">
-                                    <input type="tel" class="form-control" id="phone-input">
+                                    <input v-model="form.phone" type="tel" class="form-control" id="phone-input">
                                 </div>
                             </div>
     
@@ -62,7 +62,7 @@
                                     </label>
                                 </div>
                                 <div class="col col-12">
-                                    <textarea class="form-control" name="message" id="message" rows="5"
+                                    <textarea v-model="form.message" class="form-control" name="message" id="message" rows="5"
                                         placeholder="Leave your comments here"></textarea>
                                 </div>
                             </div>
@@ -87,6 +87,21 @@
 import NavBarComponent from '@/components/NavBarComponent.vue'
 
 export default {
-    components: { NavBarComponent }
+    components: { NavBarComponent },
+    data() {
+        return {
+            form: {
+                name: '',
+                email: '',
+                phone: '',
+                message: '',
+            }
+        }
+    },
+    methods: {
+        submit() {
+            console.log(this.form);
+        }
+    }
 }
 </script>

@@ -15,12 +15,15 @@
                         <img class="beanslogo" src="@/assets/logo/Beans_logo.svg" alt="Beans logo">
                         <div class="preview__subtitle">We makes every day full of energy and taste</div>
                         <div class="preview__subtitle">Want to try our beans?</div>
-                        <a href="./coffeepage.html" class="preview__btn">More</a>
+                        <a 
+                            href="./coffeepage.html" class="preview__btn"
+                            @click.prevent="smoothScroll"
+                        >More</a>
                     </div>
                 </div>
             </div>
         </div>
-        <section class="about">
+        <section class="about" id="about" ref="about">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
@@ -43,7 +46,7 @@
                 </div>
             </div>
         </section>
-        <section class="best">
+        <section class="best" ref="outBest">
             <div class="container">
                 <div class="title">Our best</div>
                 <div class="row">
@@ -69,6 +72,8 @@
 <script>
 import NavBarComponent from '@/components/NavBarComponent.vue'
 import ProductCardsComponent from '@/components/ProductCardsComponent.vue'
+
+import { scrollIntoView } from "seamless-scroll-polyfill";
 
 export default {
     components: { NavBarComponent, ProductCardsComponent },
@@ -96,6 +101,20 @@ export default {
                 },
             ]
         }
-    }
+    },
+
+    methods: {
+        smoothScroll() {
+            // this.$refs.outBest.scrollIntoView({
+            //     block: 'start',
+            //     behavior: 'smooth'
+            // })
+                // Добавили кроссбраузерный способ через отдельную библиотеку
+            scrollIntoView(this.$refs.outBest, {
+                behavior: "smooth", 
+                block: "start"
+            });
+        }
+    },
 }
 </script>
