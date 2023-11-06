@@ -55,10 +55,8 @@
                             <product-cards-component
                                 v-for="card in bestsellers"
                                 :key="card.id"
-                                :name="card.name"
-                                :price="card.price"
-                                :image="card.image"
                                 classItem="best__item"
+                                :card="card"
                             />
                         </div>
                     </div>

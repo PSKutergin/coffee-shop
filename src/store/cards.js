@@ -119,6 +119,11 @@ const cards = {
         getGoods(state) {
             return state.goods
         },
+        getProductById(state) {
+            return (name, id) => {
+                return state[name].find((card) => card.id === +id)
+            }
+        }
     }
 }
 
