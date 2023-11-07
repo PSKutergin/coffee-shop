@@ -111,6 +111,24 @@
                                     </span>
                                 </div>
                             </div>
+
+                            <div>
+                                <label>
+                                    <input
+                                        v-model="v$.agree.$model"
+                                        name="agree"
+                                        type="checkbox"
+                                        id="agree"
+                                    >
+                                    I agree with the offer agreement
+                                </label>
+                                <p 
+                                    v-for="error in v$.agree.$errors"
+                                    :key="error.$uid"
+                                >
+                                    {{ error.$message }}
+                                </p>
+                            </div>
     
                             <div class="row">
                                 <div class="col">
@@ -135,6 +153,7 @@ import { useVuelidate } from '@vuelidate/core';
 import { required, email, maxLength } from '@vuelidate/validators';
 import { helpers } from '@vuelidate/validators';
 import { minLength } from '../validators/minLength';
+import { checkAgree } from '../validators/checkAgree';
 
 export default {
     setup () {
@@ -146,6 +165,7 @@ export default {
             email: '',
             phone: '',
             message: '',
+            agree: true,
         }
     },
     components: { NavBarComponent },
@@ -158,6 +178,10 @@ export default {
                 required, 
                 maxLength: maxLength(20), 
                 minLength: helpers.withMessage('This value min 5', minLength),
+            },
+            agree: { 
+                required,
+                checkAgree: helpers.withMessage('Check agree', checkAgree)
             },
         }
     },
